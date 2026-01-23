@@ -2,7 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  namespace: development
+  # namespace: development
   name: imykhno
   email: imykhno@redhat.com
 spec:
