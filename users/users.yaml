@@ -1,8 +1,12 @@
+---
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  namespace: default
+  namespace: development
   name: imykhno
+  email: imykhno@redhat.com
 spec:
-  memberOf:
-    - team-b
+  profile:
+    displayName: Ihor Mykhno
+    email: imykhno@redhat.com
+  memberOf: []
