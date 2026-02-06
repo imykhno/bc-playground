@@ -1,12 +1,19 @@
 ---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  # namespace: development
-  name: imykhno
-  email: imykhno@redhat.com
+  name: guest
+  namespace: development
 spec:
-  profile:
-    displayName: Ihor Mykhno
-    email: imykhno@redhat.com
-  memberOf: []
+  memberOf: [group:development/guests]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: guests
+  namespace: development
+spec:
+  type: team
+  children: []
