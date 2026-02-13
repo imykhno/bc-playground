@@ -1,0 +1,54 @@
+---
+# Component with GitHub Scorecard only
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: github-scorecard-only-service
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+spec:
+  type: service
+  owner: rhdhtest
+  lifecycle: production
+---
+# Component with Jira Scorecard only
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: jira-scorecard-only-service
+  annotations:
+    jira/project-key: RSPT
+spec:
+  type: service
+  owner: rhdhtest
+  lifecycle: production
+---
+# Component with both GitHub and Jira Scorecards
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: all-scorecards-service
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+    jira/project-key: RSPT
+spec:
+  type: service
+  owner: rhdhtest
+  lifecycle: production
+---
+# Component with both GitHub and Jira Scorecards with not specified owner
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: all-scorecards-service-different-owner
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+    jira/project-key: RSPT
+    jira/label: JupiterTeam
+spec:
+  type: service
+  owner: rhdh-team
+  lifecycle: production
