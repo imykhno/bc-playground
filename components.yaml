@@ -9,7 +9,7 @@ metadata:
     backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
 spec:
   type: service
-  owner: rhdhtest
+  owner: user:rhdhtest
   lifecycle: production
 ---
 # Component with Jira Scorecard only
@@ -21,7 +21,7 @@ metadata:
     jira/project-key: RSPT
 spec:
   type: service
-  owner: rhdhtest
+  owner: user:rhdhtest
   lifecycle: production
 ---
 # Component with both GitHub and Jira Scorecards
@@ -35,7 +35,7 @@ metadata:
     jira/project-key: RSPT
 spec:
   type: service
-  owner: rhdhtest
+  owner: user:rhdhtest
   lifecycle: production
 ---
 # Component with both GitHub and Jira Scorecards with not specified owner
