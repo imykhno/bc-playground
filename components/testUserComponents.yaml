@@ -1,0 +1,113 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: all-scorecards-service-different-owner
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+    jira/project-key: RSPT
+    jira/label: JupiterTeam
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: production
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: all-scorecards
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+    jira/project-key: RSPT
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: production
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dependabot-scorecard-only
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    github.com/dependabot: 'true'
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: experimental
+
+---
+# Component with DORA Scorecard
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dora-scorecard
+  annotations:
+    github.com/project-slug: dzemanov/test-scorecard-github-dora
+    backstage.io/source-location: url:https://github.com/dzemanov/test-scorecard-github-dora
+    scorecard.io/dora: 'true'
+    jira/incident-project-key: RSPT
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: experimental
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: github-scorecard-only
+  annotations:
+    github.com/project-slug: redhat-developer/rhdh-plugins
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-plugins
+    # Uncomment to disable `github.openPRs` metric
+    # scorecard.io/disabled-metrics: github.openPRs
+    # Uncomment to customize `github.openPRs` thresholds
+    # scorecard.io/github.openPRs.thresholds.rules.warning: '10-25'
+    # scorecard.io/github.openPRs.thresholds.rules.error: '>25'
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: production
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: jira-scorecard-only
+  annotations:
+    jira/project-key: RSPT
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: production
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: openssf-scorecard-only
+  annotations:
+    openssf/scorecard-location: https://api.securityscorecards.dev/projects/github.com/alizard0/rhdh-plugins
+    scorecard.io/disabled-metrics: openssf.maintained
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: experimental
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sonarqube-scorecard-only
+  annotations:
+    sonarqube.org/project-key: redhat-developer_rhdh-plugins
+spec:
+  type: service
+  owner: user:default/test1
+  lifecycle: experimental
